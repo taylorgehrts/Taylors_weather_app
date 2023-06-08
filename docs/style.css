@@ -15,3 +15,19 @@ body {
     margin-bottom: 20px;
     background-color: rgba(71, 71, 124, 0.133);
   }
+
+
+
+  li {
+    cursor: pointer;
+    margin-bottom: 3px;
+    padding-bottom: 2px;
+    background-color: rgb(166, 179, 198);
+    border-radius: 6px;
+    list-style: none;
+    text-align: center;
+  }
+
+  li:hover {
+    filter: brightness(110%);
+  }
