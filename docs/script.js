@@ -1,3 +1,5 @@
+
+//wait for document to be ready
 $(document).ready(function () {
     const apiKey = '89af5f7a4a50fd2c28874bd71ce48ff7';
     // Clear button click event handler
@@ -18,7 +20,7 @@ $(document).ready(function () {
 
         const city = $('#searchInput').val().trim();
         const searchResults = $('#searchResults');
-        //check to make sure something was entered
+        //check to make sure something was entered if not exit function
         if (city === "") {
             return;
         }
@@ -83,12 +85,12 @@ $(document).ready(function () {
         $('#currentTemp').text(`Temperature: ${kelvinToFahrenheit(data.list[0].main.temp)}°F`);
         $('#currentWind').text(`Wind Speed: ${data.list[0].wind.speed} m/s`);
         $('#currentHumidity').text(`Humidity: ${data.list[0].main.humidity}%`);
-        $('#day-1, #day-2, #day-3, #day-4').removeClass('d-none');
+        $('#day-1, #day-2, #day-3, #day-4, #day-5').removeClass('d-none');
 
         // Populate day-1 to day-5 cards with data
-        let dayCount = 1;
-        for (let i = 1; i <= 5; i++) {
-            const forecastIndex = i * 8;
+        let dayCount = 0;
+        for (let i = 0; i <= 5; i++) {
+            const forecastIndex = i * 7 +4;
             const forecast = data.list[forecastIndex];
             console.log(forecast);
             const cardId = `day-${i}`;
@@ -197,6 +199,4 @@ $(document).ready(function () {
 
 
 
-    // kelvin to fahrenheit formula (291.15K − 273.15) × 9/5 + 32 = 64.4°F
-    //kelvin to celsius formula (291.15K − 273.15) 
 
