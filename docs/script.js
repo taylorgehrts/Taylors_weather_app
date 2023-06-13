@@ -171,7 +171,7 @@ $(document).ready(function () {
         $('#forecastHumidity').text(`Humidity: ${forecastHumidity}%`);
 
         // Show the forecast details modal
-        $('#forecastModal').modal('show');
+        // $('#forecastModal').modal('show');
     }
 
     // Function to convert temperature from Kelvin to Fahrenheit
